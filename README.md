@@ -49,11 +49,11 @@ Note: When changing the SSH port, make sure that the firewall is open for port 2
 ## As grader, force Key-Based Authentication
 1. As ubuntu, use `sudo su - grader` to switch the user to grader.
 2. Generate keys on local machine using `ssh-keygen` ; then save the private key in `/home/bcko/.ssh/id_rsa` on local machine
-3. `sudo mkdir /home/grader/.ssh
-    sudo chown grader:grader /home/grader/.ssh
-    sudo chmod 700 /home/grader/.ssh
-    sudo cp /home/ubuntu/.ssh/authorized_key
-    sudo chmod 644 /home/grader/.ssh/authorized_keys`
+3. `sudo mkdir /home/grader/.ssh`
+   `sudo chown grader:grader /home/grader/.ssh`
+   `sudo chmod 700 /home/grader/.ssh`
+   `sudo cp /home/ubuntu/.ssh/authorized_key`
+   `sudo chmod 644 /home/grader/.ssh/authorized_keys`
 4. Reload SSH using `service ssh restart`
 5. Now you must use key pair to login. In local machine, in the directory with the .pem file you can login to the lightsail server:
   `ssh -i {.pem file} grader@{ip_address} -p 2200`
@@ -144,11 +144,11 @@ Note: When changing the SSH port, make sure that the firewall is open for port 2
 ## Install modules
 1. Go inside `source venv/bin/activate`
 2. Use pip to install all modules:
-  `pip install httplib2` - For httplib2 module
-  `pip install requests` - For requests module
-  `pip install --upgrade oauth2client` - To use oauth authentication
-  `pip install sqlalchemy` - To use the python sqlalchemy
-  `sudo apt-get install python-psycopg2` - To use python Postgresql psycopg
+    `pip install httplib2` - For httplib2 module
+    `pip install requests` - For requests module
+    `pip install --upgrade oauth2client` - To use oauth authentication
+    `pip install sqlalchemy` - To use the python sqlalchemy
+    `sudo apt-get install python-psycopg2` - To use python Postgresql psycopg
 
 ## Install and configure PostgreSQL
 1. Install PostgreSQL:
@@ -158,8 +158,8 @@ Note: When changing the SSH port, make sure that the firewall is open for port 2
 3. Change user to postgres:`sudo su - postgres`
 4. Connect to psql:`psql`
 5. Create a new database named catalog and create a new user named catalog in postgreSQL shell:
-  `postgres=# CREATE DATABASE catalog;
-   postgres=# CREATE USER catalog;`
+  `postgres=# CREATE DATABASE catalog;`
+  `postgres=# CREATE USER catalog;`
 6. Set a password for user catalog:
   `postgres=# ALTER ROLE catalog WITH PASSWORD 'password';`
 7. Give user "catalog" permission to "catalog" application database:
@@ -169,17 +169,16 @@ Note: When changing the SSH port, make sure that the firewall is open for port 2
 
 ## Set up OAuth
 1. Google oauth:
-  - https://console.developers.google.com/project
-  Go to your application credentials tab and add your public ip and hostname to Authorized JS origins
+  - Go to your application credentials tab and add your public ip and hostname to Authorized JS origins https://console.developers.google.com/project
+
 2. Facebook oauth:
-  - https://developers.facebook.com/apps/
-  Go to your application and the settings tab
+  - Go to your application and the settings tab https://developers.facebook.com/apps/
   - Add your public ip to the site URL
 
 ## Restart Apache and Run the application
 1. Restart Apache `sudo service apache2 restart`
 2. Use the URL below to visit web application
-http://ec2-13-59-54-0.us-east-2.compute.amazonaws.com/
+   http://ec2-13-59-54-0.us-east-2.compute.amazonaws.com/
 
 ## References
 - [Amazon Lightsail](https://lightsail.aws.amazon.com/ls/docs/getting-started/article/getting-started-with-amazon-lightsail)
