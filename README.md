@@ -42,7 +42,7 @@ Note: When changing the SSH port, make sure that the firewall is open for port 2
 
 ## Create a new user grader and give grader sudo
 1. Create a new user named grader: `sudo adduser grader`
-2. Create a password (We will be disabling this feature). Then, we will be asked for addition information which we can just press enter (optional).
+2. Create a password (Password: udacity59). Then, we will be asked for addition information which we can just press enter (optional).
 3. Use the usermod command to add the user to the sudo group:
 `sudo usermod -aG sudo grader`
 
