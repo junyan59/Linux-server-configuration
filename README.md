@@ -1,6 +1,6 @@
 # Linux Server Configuration (Lightsail Amazon Server)
 
-This is the project for Udacity - Full Stack Web Developer Nanodegree. A Linux virtual machine will be configurated to support a web application. I will secure the server from a number of attack vectors, install and configure a database server, and deploy one of my existing web applications onto it.
+A Linux virtual machine is configurated to support the movies bookmark web application. The server is secured from a number of attack vectors and set up the user management. I also configured the web server to serve the application as a WSGI app.
 
 ## IP address and SSH port
 - public IP: 13.59.54.0
